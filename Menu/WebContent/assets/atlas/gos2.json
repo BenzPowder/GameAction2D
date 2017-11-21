@@ -1,0 +1,249 @@
+{
+  "frames": {
+    "idle_000": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 0,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_001": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 64,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_002": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 128,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_003": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 320,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_004": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 383,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_005": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 446,
+        "y": 0,
+        "w": 63,
+        "h": 63
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0,
+        "w": 63,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_006": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 509,
+        "y": 0,
+        "w": 63,
+        "h": 63
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0,
+        "w": 63,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_007": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 572,
+        "y": 0,
+        "w": 63,
+        "h": 63
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 0,
+        "w": 63,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_008": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 635,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_009": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 698,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 1,
+        "y": 1,
+        "w": 63,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_010": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 192,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    },
+    "idle_011": {
+      "trimmed": true,
+      "rotated": false,
+      "frame": {
+        "x": 256,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 1,
+        "w": 64,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      }
+    }
+  },
+  "meta": {
+    "app": "Phaser Editor",
+    "version": "1",
+    "image": "gos2.png"
+  }
+}

@@ -1,0 +1,649 @@
+{
+  "level": [
+    {
+      "type": "atlas",
+      "key": "actors",
+      "textureURL": "assets/atlas/actors.png",
+      "atlasURL": "assets/atlas/actors.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "spritesheet",
+      "key": "sheet",
+      "url": "assets/tilemap/sheet.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "Graves",
+      "url": "assets/tilemap/Graves.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "atlas",
+      "key": "monster",
+      "textureURL": "assets/atlas/monster.png",
+      "atlasURL": "assets/atlas/monster.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "Boy",
+      "textureURL": "assets/atlas/Boy.png",
+      "atlasURL": "assets/atlas/Boy.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "boss1",
+      "textureURL": "assets/atlas/boss.png",
+      "atlasURL": "assets/atlas/boss.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "tilemap",
+      "key": "past1",
+      "url": "assets/tilemap/past1.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "tilemap",
+      "key": "past2",
+      "url": "assets/tilemap/past2.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "atlas",
+      "key": "mon1",
+      "textureURL": "assets/atlas/mon1.png",
+      "atlasURL": "assets/atlas/mon1.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "mon2",
+      "textureURL": "assets/atlas/mon2.png",
+      "atlasURL": "assets/atlas/mon2.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "image",
+      "key": "mono",
+      "url": "assets/images/mono.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "water",
+      "url": "assets/tilemap/water.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "BG",
+      "url": "assets/images/BG.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "forest",
+      "url": "assets/tilemap/forest.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "warp",
+      "url": "assets/images/warp.png",
+      "overwrite": false
+    },
+    {
+      "type": "atlas",
+      "key": "gos",
+      "textureURL": "assets/atlas/gos.png",
+      "atlasURL": "assets/atlas/gos.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "atlas",
+      "key": "gos2",
+      "textureURL": "assets/atlas/gos2.png",
+      "atlasURL": "assets/atlas/gos2.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "image",
+      "key": "Boom",
+      "url": "assets/images/Boom.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "bullet",
+      "url": "assets/images/bullet.png",
+      "overwrite": false
+    },
+    {
+      "type": "tilemap",
+      "key": "past3",
+      "url": "assets/tilemap/past3.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "image",
+      "key": "warp2",
+      "url": "assets/images/warp2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "warp3",
+      "url": "assets/images/warp3.png",
+      "overwrite": false
+    },
+    {
+      "type": "spritesheet",
+      "key": "for",
+      "url": "assets/tilemap/for.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "image",
+      "key": "11",
+      "url": "assets/images/1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "21",
+      "url": "assets/images/2.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "3",
+      "url": "assets/images/3.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "4",
+      "url": "assets/images/4.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "tilemap",
+      "key": "past4",
+      "url": "assets/tilemap/past4.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "tilemap",
+      "key": "p2",
+      "url": "assets/tilemap/p2.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "tilemap",
+      "key": "p3",
+      "url": "assets/tilemap/p3.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "atlas",
+      "key": "glory",
+      "textureURL": "assets/atlas/glory.png",
+      "atlasURL": "assets/atlas/glory.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "spritesheet",
+      "key": "bullet1",
+      "url": "assets/atlas/bullet.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "audio",
+      "key": "map1",
+      "urls": ["assets/Sound/map1.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "check2",
+      "urls": ["assets/Sound/check2.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "map2",
+      "urls": ["assets/Sound/map2.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "map3",
+      "urls": ["assets/Sound/map3.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "map41",
+      "urls": ["assets/Sound/map41.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "jump",
+      "urls": ["assets/Sound/jump.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "spritesheet",
+      "key": "armor3",
+      "url": "assets/images/armor3.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    }
+  ],
+  "start": [
+    {
+      "type": "image",
+      "key": "tap-to-start",
+      "url": "assets/images/tap-to-start.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "tap",
+      "url": "assets/images/tap.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "story_button",
+      "url": "assets/images/story_button.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "how",
+      "url": "assets/images/how.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "logo",
+      "url": "assets/images/logo.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "credit",
+      "url": "assets/images/credit.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "mode",
+      "url": "assets/Story/mode.png",
+      "overwrite": false
+    },
+    {
+      "type": "audio",
+      "key": "audio",
+      "urls": [],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "menus",
+      "urls": ["assets/Sound/menus.ogg"],
+      "autoDecode": true
+    }
+  ],
+  "preload": [{
+    "type": "image",
+    "key": "loading",
+    "url": "assets/images/loading.png",
+    "overwrite": false
+  }],
+  "Story": [
+    {
+      "type": "image",
+      "key": "boss",
+      "url": "assets/tilemap/boss.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "City",
+      "url": "assets/tilemap/City.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "mode",
+      "url": "assets/Story/mode.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m1s1",
+      "url": "assets/Story/m1s1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m1s2",
+      "url": "assets/Story/m1s2.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m1s3",
+      "url": "assets/Story/m1s3.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m2s1",
+      "url": "assets/Story/m2s1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m2s2",
+      "url": "assets/Story/m2s2.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m2s3",
+      "url": "assets/Story/m2s3.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m3s1",
+      "url": "assets/Story/m3s1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m3s2",
+      "url": "assets/Story/m3s2.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m3s3",
+      "url": "assets/Story/m3s3.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m4s1",
+      "url": "assets/Story/m4s1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m4s2",
+      "url": "assets/Story/m4s2.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m4s3",
+      "url": "assets/Story/m4s3.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m4s4",
+      "url": "assets/Story/m4s4.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m4s5",
+      "url": "assets/Story/m4s5.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m4s6",
+      "url": "assets/Story/m4s6.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m5s1",
+      "url": "assets/Story/m5s1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m5s2",
+      "url": "assets/Story/m5s2.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m5s3",
+      "url": "assets/Story/m5s3.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m5s4",
+      "url": "assets/Story/m5s4.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m5s5",
+      "url": "assets/Story/m5s5.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "m5s6",
+      "url": "assets/Story/m5s6.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "audio",
+      "key": "waterlife",
+      "urls": ["assets/Sound/waterlife.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "theforest",
+      "urls": ["assets/Sound/theforest.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "ruincity2",
+      "urls": ["assets/Sound/ruincity2.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "theend6",
+      "urls": ["assets/Sound/theend6.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "theend7",
+      "urls": ["assets/Sound/theend7.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "theaftermath",
+      "urls": ["assets/Sound/theaftermath.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "theafter",
+      "urls": ["assets/Sound/theafter.ogg"],
+      "autoDecode": true
+    }
+  ],
+  "How": [
+    {
+      "type": "image",
+      "key": "water",
+      "url": "assets/tilemap/water.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "HowTo",
+      "url": "assets/how/HowTo.png",
+      "overwrite": false
+    }
+  ],
+  "Credit": [
+    {
+      "type": "image",
+      "key": "BG",
+      "url": "assets/images/BG.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "member",
+      "url": "assets/credit/member.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "asset",
+      "url": "assets/credit/asset.png",
+      "overwrite": false
+    }
+  ],
+  "Story2": [
+    {
+      "type": "image",
+      "key": "City",
+      "url": "assets/tilemap/City.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "BG",
+      "url": "assets/images/BG.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "1",
+      "url": "assets/Story/1.jpg",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "2",
+      "url": "assets/Story/2.jpg",
+      "overwrite": false
+    }
+  ],
+  "level2": [
+    {
+      "type": "atlas",
+      "key": "mdmon",
+      "textureURL": "assets/atlas/mdmon.png",
+      "atlasURL": "assets/atlas/mdmon.json",
+      "format": "TEXTURE_ATLAS_JSON_HASH"
+    },
+    {
+      "type": "image",
+      "key": "warp",
+      "url": "assets/images/warp.png",
+      "overwrite": false
+    },
+    {
+      "type": "tilemap",
+      "key": "past2",
+      "url": "assets/tilemap/past2.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "atlas",
+      "key": "gos",
+      "textureURL": "assets/atlas/gos.png",
+      "format": "TEXTURE_ATLAS_JSON_ARRAY"
+    },
+    {
+      "type": "atlas",
+      "key": "gos2",
+      "textureURL": "assets/atlas/gos2.png",
+      "format": "TEXTURE_ATLAS_JSON_ARRAY"
+    }
+  ],
+  "level3": [
+    {
+      "type": "atlas",
+      "key": "boy",
+      "textureURL": "assets/atlas/Boy.png",
+      "format": "TEXTURE_ATLAS_JSON_ARRAY"
+    },
+    {
+      "type": "atlas",
+      "key": "gos",
+      "textureURL": "assets/atlas/gos.png",
+      "format": "TEXTURE_ATLAS_JSON_ARRAY"
+    },
+    {
+      "type": "atlas",
+      "key": "gos2",
+      "textureURL": "assets/atlas/gos2.png",
+      "format": "TEXTURE_ATLAS_JSON_ARRAY"
+    },
+    {
+      "type": "tilemap",
+      "key": "past3",
+      "url": "assets/tilemap/past3.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "image",
+      "key": "City",
+      "url": "assets/tilemap/City.png",
+      "overwrite": false
+    }
+  ],
+  "meta": {
+    "generated": "1511244826543",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}
