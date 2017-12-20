@@ -17,12 +17,23 @@ Level2.prototype.create = function() {
 	this.bg.width = this.game.width;
 	this.bg.height = this.game.height;
 
-	this.map = this.game.add.tilemap("p2");
-	this.map.addTilesetImage('for');
+	this.map = this.game.add.tilemap("ST2");
+	this.map.addTilesetImage('forest');
+	this.map.addTilesetImage('map_sheet');
+	this.map.addTilesetImage('map2');
 	this.map_layer = this.map.createLayer("Tile Layer 1");
 	this.map_layer = this.map.createLayer("Tile Layer 3");
+	this.map_layer = this.map.createLayer("Tile Layer 4");
+	this.map_layer = this.map.createLayer("Tile Layer 2");
 	this.map_layer = this.map.createLayer("Tile Layer 1");
-
+	
+	this.game.score = 0; //เหรียญ
+	this.game.score1 =0;
+	this.scoretext=this.add.text(this.camera.width/1.3,0,'Coin :'+this.game.score,{font:'50px arial;',fill:'red'}); //เหรียญ
+	this.scoretext.fixedToCamera = true; //เหรียญ
+	this.scoretext1=this.add.text(this.game.camera.hight/1.3,0,'Score Kills :'+this.game.score1,{font:'50px arial;',fill:'blue'});
+	this.scoretext1.fixedToCamera = true;
+	
 	// ปรับขนำด world ให้กว้ำง เท่ำกับ ขนำดของ map
 	this.map_layer.resizeWorld();
 	// ก ำหนดให้ tile id 0 ถึง 17 เป็นตัวที่จะใช้ตัวสอบกำรชน
@@ -31,6 +42,7 @@ Level2.prototype.create = function() {
 	// แสดง sprite
 	this.enemies = this.add.group();
 	this.goal = this.add.group();
+	this.Coin = this.add.group(); //เหรียญ
 
 	for (x in this.map.objects.object) {
 		var obj = this.map.objects.object[x];
@@ -52,13 +64,25 @@ Level2.prototype.create = function() {
 			this.goal.add(w);
 			w.width = 128;
 			w.height = 128;
-		}
+		}else if (obj.type == "Coin") { //เหรียญ
+			var c = this.addCoin(obj.x, obj.y); //เหรียญ
+			this.Coin.add(c); //เหรียญ
+			w.width = 128; //เหรียญ
+			w.height = 128; //เหรียญ
+		} //เหรียญ
+
 	}
+	this.createWeapon();
+	this.game.physics.enable(this.player, Phaser.Physics.ARCADE);
+	this.input.keyboard.addKeyCapture([ Phaser.Keyboard.LEFT,
+			Phaser.Keyboard.RIGHT, Phaser.Keyboard.SPACEBAR,
+			Phaser.Keyboard.DOWN ]);
+	this.player.inputEnabled = true;
+	this.player.events.onInputDown.add(this.fireWeapon, this);
 };
 
 Level2.prototype.hitEnemy = function(p, x) {
 	this.music.stop();
-
 	this.game.state.start("Level2");
 };
 
@@ -69,12 +93,58 @@ Level2.prototype.hitgoal = function(p, x) {
 	this.game.state.start("Story3");
 };
 
+Level2.prototype.hitCoin = function(p, x) { //เหรียญ
+	this.scoin = this.add.audio("scoin",1,false);
+	x.kill();
+
+	if(x.kill() !=false){
+	this.scoin.play();
+	
+	}
+	
+	this.game.score++;
+	this.scoretext.text = 'Coin :'+this.game.score;
+	return true;
+};
+
+
+Level2.prototype.addCoin = function (x, y) { //เหรียญ
+	c = this.add.sprite(x, y, "coins");
+	c.anchor.set(0,2);
+	c.scale.set(0.05);
+	this.game.physics.enable(c);
+	c.body.collideWorldBounds = true;
+	//c.play("coins");
+	return c;
+};
+
+Level2.prototype.createWeapon = function() {
+	this.weapon = this.add.weapon(1, "armor3");
+	this.weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+	this.weapon.trackSprite(this.player, 60, -160);
+	this.weapon.bulletSpeed = 2000;
+	this.weapon.fireAngle = -7;
+	this.weapon.rate = 0;
+
+};
+
+Level2.prototype.fireWeapon = function() {
+	this.weapon.fire();
+};
+
 Level2.prototype.update = function() {
 	this.game.physics.arcade.collide(this.player, this.map_layer);
 	this.game.physics.arcade.collide(this.enemies, this.map_layer);
 	this.game.physics.arcade.collide(this.goal, this.map_layer);
+	this.game.physics.arcade.collide(this.Coin, this.map_layer); //เหรียญ
+	this.game.physics.arcade.collide(this.enemies, this.weapon.bullets,
+			this.onCollide, null, this);
+	this.game.physics.arcade.collide(this.player, this.Coin, this.hitCoin, //เหรียญ
+			null, this);
 	this.game.physics.arcade.collide(this.player, this.enemies, this.hitEnemy,
 			null, this);
+	this.game.physics.arcade.collide(this.player, this.weapon.bullets,
+			this.hitEnemy, null, this);
 	this.game.physics.arcade.collide(this.player, this.goal, this.hitgoal,
 			null, this);
 
@@ -82,17 +152,25 @@ Level2.prototype.update = function() {
 		this.player.body.velocity.x = -200;
 		this.player.scale.x = -1;
 		this.player.play("Walk");
+		this.weapon.trackSprite(this.player, -60, -160);
+		this.weapon.fireAngle = 180;
 	} else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
 		this.player.body.velocity.x = 200;
 		this.player.scale.x = 1;
 		this.player.play("Walk");
+		this.weapon.trackSprite(this.player, 60, -160);
+		this.weapon.fireAngle = -7;
 	}
 
 	if (this.input.keyboard.isDown(Phaser.Keyboard.UP)) {
 		if (this.player.body.velocity.y == 0)
 			this.player.body.velocity.y = -650;
-//		this.music = this.add.sound("jump", 1, false);
-//		this.music.play();
+		// this.music = this.add.sound("jump", 1, false);
+		// this.music.play();
+	}
+	if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+		this.fireWeapon();
+		this.player.play("Shoot");
 	} else if (this.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
 		// this.player.body.acceleration.y = 120;
 	} else {
@@ -103,35 +181,25 @@ Level2.prototype.update = function() {
 	}
 };
 
-// // player controll
-// var pointer = this.input.activePointer;
-// if (pointer.isDown) {
-// var dx = (pointer.worldX - this.player.x) * 2;
-// if (dx < -20 || dx > 20) {
-// if (dx > 0)
-// dx = 1;
-// else
-// dx = -1;
-// this.player.scale.x = dx;
-// this.player.body.velocity.x = 50 * dx;
-// this.player.play("walk");
-// } else {
-// this.player.play("idle");
-// }
-//
-// var dy = (pointer.worldY - this.player.y) * 2;
-// if (dy > 20) {
-// if (dy > 0)
-// dy = 1;
-// else
-// dy = -1;
-// this.player.body.velocity.y = -300 * dx;
-// this.player.play("jump");
-// }
-// }
-// if (this.player.body.velocity.x == 0) {
-// this.player.play("idle");
-// }
+Level2.prototype.onCollide = function(enemies, armor3) {
+	
+	this.explosion = this.add.audio("explosion",1,false);
+	enemies.kill();
+
+	if(enemies.kill() !=false){
+	this.explosion.play();
+	}
+	
+
+	bomb = this.add.sprite(enemies.x,enemies.y,"Boom");
+	bomb.anchor.set(0.7,1.4);
+	bomb.animations.add("all").play(12,false,true);
+	armor3.kill();
+	this.game.score1++;
+	this.scoretext1.text = 'Score Kills :'+this.game.score1;
+	
+	return true;
+};
 
 function gframes(key, n) {
 	var f = [];
@@ -152,7 +220,7 @@ Level2.prototype.addPlayer = function(x, y) {
 	t.smoothed = false;
 	this.game.physics.arcade.enable(t);
 	t.play("Idle");
-	t.body.collideWorldBounds = false;
+	t.body.collideWorldBounds = true;
 	// this.game.physics.enable(t);
 	t.body.drag.setTo(500, 0);
 	// แก้การชน
@@ -160,15 +228,14 @@ Level2.prototype.addPlayer = function(x, y) {
 	// 10=ข้างหน้า , 120=พื้น , 80=หลัง
 	// t.body.collideWorldBounds = true;
 	return t;
+};
 
-	j.anchor.set(0, 1);
-	j.smoothed = false;
-	this.game.physics.arcade.enable(j);
-	j.play("Idle");
-	j.body.collideWorldBounds = false;
-	j.body.drag.setTo(500, 0);
-	j.body.setSize(20, 60, 5, 0);
-	return j;
+Level2.prototype.moveenemies = function () {
+	var twn = this.add.tween(this.enemies);
+	twn.to({ x : 200}, 1000, "Quad.easeInOut", true, 0, Number.MAX_VALUE, true);
+	// angle หมายถึง ให้เปลี่ยนมุม ไป 360 องศา
+	twn = this.add.tween(this.enemies);
+	twn.to({ angle : 180 }, 2000, "Linear", true, 0, Number.MAX_VALUE);
 };
 
 function gframes(key, n) {
@@ -189,21 +256,13 @@ Level2.prototype.addCat = function(x, y) {
 	c.smoothed = false;
 	this.game.physics.arcade.enable(c);
 	c.play("Walk");
-	c.body.collideWorldBounds = false;
+	c.body.collideWorldBounds = true;
 	// this.game.physics.enable(t);
 	c.body.drag.setTo(500, 0);
 	// แก้การชน
 	c.body.setSize(50, 110, 10, 10);
 	// 10=ข้างหน้า , 120=พื้น , 80=หลัง
 	// t.body.collideWorldBounds = true;
-
-	tw = this.add.tween(c);
-	var nx = 30 + Math.random() * 300;
-	var nt = Math.random() * 500;
-	tw.to({
-		x : nx,
-	}, 10000 + nt, "Linear", true, 0, Number.MAX_VALUE, true);
-
 	return c;
 };
 
@@ -216,7 +275,7 @@ Level2.prototype.addDog = function(x, y) {
 	c.smoothed = false;
 	this.game.physics.arcade.enable(c);
 	c.play("Idle");
-	c.body.collideWorldBounds = false;
+	c.body.collideWorldBounds = true;
 	// this.game.physics.enable(t);
 	c.body.drag.setTo(500, 0);
 	// แก้การชน
@@ -224,10 +283,19 @@ Level2.prototype.addDog = function(x, y) {
 	// 10=ข้างหน้า , 120=พื้น , 80=หลัง
 	// t.body.collideWorldBounds = true;
 	return c;
+
+	j.anchor.set(0, 1);
+	j.smoothed = false;
+	this.game.physics.arcade.enable(j);
+	j.play("idle");
+	j.body.collideWorldBounds = false;
+	j.body.drag.setTo(500, 0);
+	j.body.setSize(20, 60, 5, 0);
+	return j;
 };
 
 Level2.prototype.addgoal = function(x, y) {
-	w = this.add.sprite(x, y, "warp3");
+	w = this.add.sprite(x, y, "warp");
 	w.anchor.set(0, 2);
 	// w.smoothed = false;
 	// enable physic

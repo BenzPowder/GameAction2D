@@ -2,76 +2,9 @@
   "level": [
     {
       "type": "atlas",
-      "key": "actors",
-      "textureURL": "assets/atlas/actors.png",
-      "atlasURL": "assets/atlas/actors.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "spritesheet",
-      "key": "sheet",
-      "url": "assets/tilemap/sheet.png",
-      "frameWidth": 0,
-      "frameHeight": 0,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
-    },
-    {
-      "type": "spritesheet",
-      "key": "Graves",
-      "url": "assets/tilemap/Graves.png",
-      "frameWidth": 0,
-      "frameHeight": 0,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
-    },
-    {
-      "type": "atlas",
       "key": "monster",
       "textureURL": "assets/atlas/monster.png",
       "atlasURL": "assets/atlas/monster.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "atlas",
-      "key": "Boy",
-      "textureURL": "assets/atlas/Boy.png",
-      "atlasURL": "assets/atlas/Boy.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "atlas",
-      "key": "boss1",
-      "textureURL": "assets/atlas/boss.png",
-      "atlasURL": "assets/atlas/boss.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "tilemap",
-      "key": "past1",
-      "url": "assets/tilemap/past1.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "tilemap",
-      "key": "past2",
-      "url": "assets/tilemap/past2.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "atlas",
-      "key": "mon1",
-      "textureURL": "assets/atlas/mon1.png",
-      "atlasURL": "assets/atlas/mon1.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "atlas",
-      "key": "mon2",
-      "textureURL": "assets/atlas/mon2.png",
-      "atlasURL": "assets/atlas/mon2.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
     },
     {
@@ -82,20 +15,8 @@
     },
     {
       "type": "image",
-      "key": "water",
-      "url": "assets/tilemap/water.png",
-      "overwrite": false
-    },
-    {
-      "type": "image",
       "key": "BG",
       "url": "assets/images/BG.jpg",
-      "overwrite": false
-    },
-    {
-      "type": "image",
-      "key": "forest",
-      "url": "assets/tilemap/forest.png",
       "overwrite": false
     },
     {
@@ -120,24 +41,6 @@
     },
     {
       "type": "image",
-      "key": "Boom",
-      "url": "assets/images/Boom.png",
-      "overwrite": false
-    },
-    {
-      "type": "image",
-      "key": "bullet",
-      "url": "assets/images/bullet.png",
-      "overwrite": false
-    },
-    {
-      "type": "tilemap",
-      "key": "past3",
-      "url": "assets/tilemap/past3.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "image",
       "key": "warp2",
       "url": "assets/images/warp2.png",
       "overwrite": false
@@ -149,25 +52,15 @@
       "overwrite": false
     },
     {
-      "type": "spritesheet",
-      "key": "for",
-      "url": "assets/tilemap/for.png",
-      "frameWidth": 0,
-      "frameHeight": 0,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
-    },
-    {
       "type": "image",
       "key": "11",
-      "url": "assets/images/1.jpg",
+      "url": "assets/images/11.jpg",
       "overwrite": false
     },
     {
       "type": "image",
       "key": "21",
-      "url": "assets/images/2.jpg",
+      "url": "assets/images/21.jpg",
       "overwrite": false
     },
     {
@@ -183,39 +76,11 @@
       "overwrite": false
     },
     {
-      "type": "tilemap",
-      "key": "past4",
-      "url": "assets/tilemap/past4.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "tilemap",
-      "key": "p2",
-      "url": "assets/tilemap/p2.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "tilemap",
-      "key": "p3",
-      "url": "assets/tilemap/p3.json",
-      "format": "TILED_JSON"
-    },
-    {
       "type": "atlas",
       "key": "glory",
       "textureURL": "assets/atlas/glory.png",
       "atlasURL": "assets/atlas/glory.json",
       "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "spritesheet",
-      "key": "bullet1",
-      "url": "assets/atlas/bullet.png",
-      "frameWidth": 0,
-      "frameHeight": 0,
-      "frameMax": -1,
-      "margin": 0,
-      "spacing": 0
     },
     {
       "type": "audio",
@@ -248,12 +113,6 @@
       "autoDecode": true
     },
     {
-      "type": "audio",
-      "key": "jump",
-      "urls": ["assets/Sound/jump.ogg"],
-      "autoDecode": true
-    },
-    {
       "type": "spritesheet",
       "key": "armor3",
       "url": "assets/images/armor3.png",
@@ -262,6 +121,130 @@
       "frameMax": -1,
       "margin": 0,
       "spacing": 0
+    },
+    {
+      "type": "tilemap",
+      "key": "ST1",
+      "url": "assets/tilemap/ST1.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "tilemap",
+      "key": "ST11",
+      "url": "assets/tilemap/ST11.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "spritesheet",
+      "key": "map2",
+      "url": "assets/tilemap/map2.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "map_sheet",
+      "url": "assets/tilemap/map_sheet.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "tilemap",
+      "key": "ST2",
+      "url": "assets/tilemap/ST2.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "spritesheet",
+      "key": "mapCity",
+      "url": "assets/tilemap/mapCity.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "tilemap",
+      "key": "ST3",
+      "url": "assets/tilemap/ST3.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "tilemap",
+      "key": "ST3.1",
+      "url": "assets/tilemap/ST3.1.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "spritesheet",
+      "key": "Dead (12)",
+      "url": "assets/tilemap/Dead (12).png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "Boom",
+      "url": "assets/images/Boom.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "tilemap",
+      "key": "ST4",
+      "url": "assets/tilemap/ST4.json",
+      "format": "TILED_JSON"
+    },
+    {
+      "type": "spritesheet",
+      "key": "forest",
+      "url": "assets/tilemap/forest.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "dead",
+      "url": "assets/tilemap/dead.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "image",
+      "key": "coins",
+      "url": "assets/images/coins.png",
+      "overwrite": false
+    },
+    {
+      "type": "audio",
+      "key": "explosion",
+      "urls": ["assets/audio/explosion.ogg"],
+      "autoDecode": true
+    },
+    {
+      "type": "audio",
+      "key": "scoin",
+      "urls": ["assets/Sound/scoin.ogg"],
+      "autoDecode": true
     }
   ],
   "start": [
@@ -309,12 +292,6 @@
     },
     {
       "type": "audio",
-      "key": "audio",
-      "urls": [],
-      "autoDecode": true
-    },
-    {
-      "type": "audio",
       "key": "menus",
       "urls": ["assets/Sound/menus.ogg"],
       "autoDecode": true
@@ -327,18 +304,6 @@
     "overwrite": false
   }],
   "Story": [
-    {
-      "type": "image",
-      "key": "boss",
-      "url": "assets/tilemap/boss.jpg",
-      "overwrite": false
-    },
-    {
-      "type": "image",
-      "key": "City",
-      "url": "assets/tilemap/City.png",
-      "overwrite": false
-    },
     {
       "type": "image",
       "key": "mode",
@@ -503,31 +468,17 @@
     },
     {
       "type": "audio",
-      "key": "theaftermath",
-      "urls": ["assets/Sound/theaftermath.ogg"],
-      "autoDecode": true
-    },
-    {
-      "type": "audio",
       "key": "theafter",
       "urls": ["assets/Sound/theafter.ogg"],
       "autoDecode": true
     }
   ],
-  "How": [
-    {
-      "type": "image",
-      "key": "water",
-      "url": "assets/tilemap/water.png",
-      "overwrite": false
-    },
-    {
-      "type": "image",
-      "key": "HowTo",
-      "url": "assets/how/HowTo.png",
-      "overwrite": false
-    }
-  ],
+  "How": [{
+    "type": "image",
+    "key": "HowTo",
+    "url": "assets/how/HowTo.png",
+    "overwrite": false
+  }],
   "Credit": [
     {
       "type": "image",
@@ -548,99 +499,37 @@
       "overwrite": false
     }
   ],
-  "Story2": [
+  "level2": [{
+    "type": "image",
+    "key": "warp",
+    "url": "assets/images/warp.png",
+    "overwrite": false
+  }],
+  "level3": [],
+  "level4": [
     {
-      "type": "image",
-      "key": "City",
-      "url": "assets/tilemap/City.png",
-      "overwrite": false
+      "type": "spritesheet",
+      "key": "HpE",
+      "url": "assets/images/HpE.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
     },
     {
-      "type": "image",
-      "key": "BG",
-      "url": "assets/images/BG.jpg",
-      "overwrite": false
-    },
-    {
-      "type": "image",
-      "key": "1",
-      "url": "assets/Story/1.jpg",
-      "overwrite": false
-    },
-    {
-      "type": "image",
-      "key": "2",
-      "url": "assets/Story/2.jpg",
-      "overwrite": false
-    }
-  ],
-  "level2": [
-    {
-      "type": "atlas",
-      "key": "mdmon",
-      "textureURL": "assets/atlas/mdmon.png",
-      "atlasURL": "assets/atlas/mdmon.json",
-      "format": "TEXTURE_ATLAS_JSON_HASH"
-    },
-    {
-      "type": "image",
-      "key": "warp",
-      "url": "assets/images/warp.png",
-      "overwrite": false
-    },
-    {
-      "type": "tilemap",
-      "key": "past2",
-      "url": "assets/tilemap/past2.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "atlas",
-      "key": "gos",
-      "textureURL": "assets/atlas/gos.png",
-      "format": "TEXTURE_ATLAS_JSON_ARRAY"
-    },
-    {
-      "type": "atlas",
-      "key": "gos2",
-      "textureURL": "assets/atlas/gos2.png",
-      "format": "TEXTURE_ATLAS_JSON_ARRAY"
-    }
-  ],
-  "level3": [
-    {
-      "type": "atlas",
-      "key": "boy",
-      "textureURL": "assets/atlas/Boy.png",
-      "format": "TEXTURE_ATLAS_JSON_ARRAY"
-    },
-    {
-      "type": "atlas",
-      "key": "gos",
-      "textureURL": "assets/atlas/gos.png",
-      "format": "TEXTURE_ATLAS_JSON_ARRAY"
-    },
-    {
-      "type": "atlas",
-      "key": "gos2",
-      "textureURL": "assets/atlas/gos2.png",
-      "format": "TEXTURE_ATLAS_JSON_ARRAY"
-    },
-    {
-      "type": "tilemap",
-      "key": "past3",
-      "url": "assets/tilemap/past3.json",
-      "format": "TILED_JSON"
-    },
-    {
-      "type": "image",
-      "key": "City",
-      "url": "assets/tilemap/City.png",
-      "overwrite": false
+      "type": "spritesheet",
+      "key": "mushroom",
+      "url": "assets/images/mushroom.png",
+      "frameWidth": 0,
+      "frameHeight": 0,
+      "frameMax": -1,
+      "margin": 0,
+      "spacing": 0
     }
   ],
   "meta": {
-    "generated": "1511244826543",
+    "generated": "1513068994933",
     "app": "Phaser Editor",
     "url": "http://phasereditor.boniatillo.com",
     "version": "1.0",

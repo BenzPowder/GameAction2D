@@ -31,7 +31,7 @@ How.prototype.create = function() {
 How.prototype.change = function(k) {
  	this.sprite.kill();
 	this.sprite = this.add.sprite(this.world.centerX, this.world.centerY,k);
-    this.sprite.anchor.set(0.5, 0.5);
+    //this.sprite.anchor.set(0.5, 0.5);
 };
 How.prototype.startGame = function() {
 	this.game.state.start("Menu");

@@ -32,7 +32,7 @@ Credit.prototype.create = function() {
 Credit.prototype.change = function(k) {
  	this.sprite.kill();
 	this.sprite = this.add.sprite(this.world.centerX, this.world.centerY,k);
-    this.sprite.anchor.set(0.5, 0.5);
+    //this.sprite.anchor.set(0.5, 0.5);
 };
 Credit.prototype.startGame = function() {
 	this.game.state.start("Menu");

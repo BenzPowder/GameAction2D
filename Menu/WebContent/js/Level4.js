@@ -20,8 +20,10 @@ Level4.prototype.create = function() {
 	this.bg.width = this.game.width;
 	this.bg.height = this.game.height;
 
-	this.map = this.game.add.tilemap("past4");
-	this.map.addTilesetImage('Graves');
+	this.map = this.game.add.tilemap("ST4");
+	this.map.addTilesetImage('map_sheet');
+	this.map_layer = this.map.createLayer("Tile Layer 1");
+	this.map_layer = this.map.createLayer("Tile Layer 2");
 	this.map_layer = this.map.createLayer("Tile Layer 1");
 
 	// ปรับขนำด world ให้กว้ำง เท่ำกับ ขนำดของ map
@@ -55,11 +57,18 @@ Level4.prototype.create = function() {
 			w.height = 128;
 		}
 	}
+	this.createWeapon();
+	this.game.physics.enable(this.player, Phaser.Physics.ARCADE);
+	this.input.keyboard.addKeyCapture([ Phaser.Keyboard.LEFT,
+			Phaser.Keyboard.RIGHT, Phaser.Keyboard.SPACEBAR,
+			Phaser.Keyboard.DOWN ]);
+	this.player.inputEnabled = true;
+	this.player.events.onInputDown.add(this.fireWeapon, this);
 };
 
 Level4.prototype.hitEnemy = function(p, x) {
 	this.music.stop();
-	this.game.state.start("Story5");
+	this.game.state.start("Level4");
 };
 
 Level4.prototype.hitgoal = function(p, x) {
@@ -67,10 +76,27 @@ Level4.prototype.hitgoal = function(p, x) {
 	this.game.state.start("Story5");
 };
 
+Level4.prototype.createWeapon = function() {
+	this.weapon = this.add.weapon(1, "armor3");
+	this.weapon.bulletKillType = Phaser.Weapon.KILL_CAMERA_BOUNDS;
+	this.weapon.trackSprite(this.player, 60, -160);
+	this.weapon.bulletSpeed = 1500;
+	this.weapon.fireAngle = -7;
+	this.weapon.rate = 0;
+	
+};
+
+Level4.prototype.fireWeapon = function() {
+	this.weapon.fire();
+	
+};
+
 Level4.prototype.update = function() {
 	this.game.physics.arcade.collide(this.player, this.map_layer);
 	this.game.physics.arcade.collide(this.enemies, this.map_layer);
 	this.game.physics.arcade.collide(this.goal, this.map_layer);
+	this.game.physics.arcade.collide(this.enemies, this.weapon.bullets,
+			this.onCollide, null, this);
 	this.game.physics.arcade.collide(this.player, this.enemies, this.hitEnemy,
 			null, this);
 	this.game.physics.arcade.collide(this.player, this.goal, this.hitgoal,
@@ -80,28 +106,51 @@ Level4.prototype.update = function() {
 		this.player.body.velocity.x = -200;
 		this.player.scale.x = -1;
 		this.player.play("Walk");
+		this.weapon.trackSprite(this.player, -60, -160);
+		this.weapon.fireAngle = 180;
 	} else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
 		this.player.body.velocity.x = 200;
 		this.player.scale.x = 1;
 		this.player.play("Walk");
+		this.weapon.trackSprite(this.player, 60, -160);
+		this.weapon.fireAngle = -7;
 	}
 
 	if (this.input.keyboard.isDown(Phaser.Keyboard.UP)) {
 		if (this.player.body.velocity.y == 0)
 			this.player.body.velocity.y = -650;
-//		this.music = this.add.sound("jump");
-//		this.music.play();
+		// this.music = this.add.sound("jump");
+		// this.music.play();
 	} else if (this.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
 		// this.player.body.acceleration.y = 120;
+	}
+	if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+		this.fireWeapon();
+		this.player.play("Shoot");
 	} else {
 		// this.player.body.velocity.setTo(0, 0);
 		// this.player.body.acceleration.setTo(0, 0);
 		if (this.player.body.velocity.x == 0)
 			this.player.play("Idle");
 	}
-	if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
-		this.player.play("Shoot");
+};
+
+Level4.prototype.onCollide = function(enemies, armor3) {
+	
+	this.explosion = this.add.audio("explosion",1,false);
+	enemies.kill();
+
+	if(enemies.kill() !=false){
+	this.explosion.play();
 	}
+	bomb = this.add.sprite(enemies.x,enemies.y,"Boom");
+	bomb.anchor.set(0.7,1.4);
+	bomb.animations.add("all").play(12,false,true);
+	armor3.kill();
+	
+	/*
+	 * this.game.score++; this.scoreText.text = '' + this.game.score;
+	 */
 };
 
 function gframes(key, n) {
@@ -123,7 +172,7 @@ Level4.prototype.addPlayer = function(x, y) {
 	t.smoothed = false;
 	this.game.physics.arcade.enable(t);
 	t.play("Idle");
-	t.body.collideWorldBounds = false;
+	t.body.collideWorldBounds = true;
 	// this.game.physics.enable(t);
 	t.body.drag.setTo(500, 0);
 	// แก้การชน
@@ -131,15 +180,6 @@ Level4.prototype.addPlayer = function(x, y) {
 	// 10=ข้างหน้า , 120=พื้น , 80=หลัง
 	// t.body.collideWorldBounds = true;
 	return t;
-
-	j.anchor.set(0, 1);
-	j.smoothed = false;
-	this.game.physics.arcade.enable(j);
-	j.play("Idle");
-	j.body.collideWorldBounds = false;
-	j.body.drag.setTo(500, 0);
-	j.body.setSize(20, 60, 5, 0);
-	return j;
 };
 
 function gframes(key, n) {
@@ -152,6 +192,8 @@ function gframes(key, n) {
 }
 
 Level4.prototype.addCat = function(x, y) {
+	
+	
 	var c = this.add.sprite(x, y, "monster");
 	c.animations.add("Idle", gframes("idle", 11), 12, true);
 	// c.animations.add("Walk", gframes("walk", 11), 12, true);
@@ -168,48 +210,38 @@ Level4.prototype.addCat = function(x, y) {
 	c.body.setSize(50, 110, 10, 10);
 	// 10=ข้างหน้า , 120=พื้น , 80=หลัง
 	// t.body.collideWorldBounds = true;
+	tw = this.add.tween(c);
+	var nx = 30 + Math.random() * 300;
+	var nt = Math.random() * 500;
+	tw.to({
+		x : nx,
+	}, 20000 + nt, "Linear", true, 0, Number.MAX_VALUE, true);
 	return c;
-
-	j.anchor.set(0, 1);
-	j.smoothed = false;
-	this.game.physics.arcade.enable(j);
-	j.play("Walk");
-	j.body.collideWorldBounds = false;
-	j.body.drag.setTo(500, 0);
-	j.body.setSize(20, 60, 5, 0);
-	return j;
 };
 
 Level4.prototype.addDog = function(x, y) {
-	var c = this.add.sprite(x, y, "monster");
+	var c = this.add.sprite(x, y, "gos");
 	c.animations.add("Idle", gframes("idle", 11), 12, true);
-	// c.animations.add("Walk", gframes("walk", 11), 12, true);
+	c.animations.add("Walk", gframes("walk", 11), 12, true);
 	c.anchor.set(0, 2);
-	c.scale.x = -1;
-	/*
-	 * var twn = this.add.tween(c); twn.to({ x : 0.3, x : -0.3 }, 15000,
-	 * "Linear", true, 0);
-	 */
+	(c.scale.x = -1);
 	c.smoothed = false;
 	this.game.physics.arcade.enable(c);
-	c.play("Idle");
+	c.play("Walk");
 	c.body.collideWorldBounds = false;
 	// this.game.physics.enable(t);
 	c.body.drag.setTo(500, 0);
 	// แก้การชน
-	c.body.setSize(50, 40, 10, 10);
+	c.body.setSize(50, 110, 10, 10);
 	// 10=ข้างหน้า , 120=พื้น , 80=หลัง
 	// t.body.collideWorldBounds = true;
+	tw = this.add.tween(c);
+	var nx = 30 + Math.random() * 300;
+	var nt = Math.random() * 500;
+	tw.to({
+		x : nx,
+	}, 10000 + nt, "Linear", true, 0, Number.MAX_VALUE, true);
 	return c;
-
-	j.anchor.set(0, 1);
-	j.smoothed = false;
-	this.game.physics.arcade.enable(j);
-	j.play("Idle");
-	j.body.collideWorldBounds = false;
-	j.body.drag.setTo(500, 0);
-	j.body.setSize(20, 60, 5, 0);
-	return j;
 };
 
 Level4.prototype.addgoal = function(x, y) {
