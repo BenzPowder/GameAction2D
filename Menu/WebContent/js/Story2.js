@@ -20,7 +20,8 @@ Story2.prototype.create = function() {
 	this.sprite.anchor.set(0.8, 0.8);
 	this.input.onDown.add(this.startGame, this);
 	this.time.events.add(10000,this.change,this,"m2s2");
-	this.time.events.add(23000, this.startGame, this);
+	this.time.events.add(20000,this.change,this,"m2s3");
+	this.time.events.add(33000, this.startGame, this);
 };
 Story2.prototype.change = function(k) {
 	this.sprite.kill();
